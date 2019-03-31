@@ -127,6 +127,32 @@
   </entry>
   
   <entry>
+    <title>统计SqlServer数据库表规模</title>
+    <link href="http://gavinhome.github.io/2018/09/28/%E7%BB%9F%E8%AE%A1SqlServer%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E8%A7%84%E6%A8%A1/"/>
+    <id>http://gavinhome.github.io/2018/09/28/统计SqlServer数据库表规模/</id>
+    <published>2018-09-27T16:00:00.000Z</published>
+    <updated>2019-03-31T12:25:58.393Z</updated>
+    
+    <content type="html"><![CDATA[<p>统计数据库中所有表的数据规模：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>* <span class="keyword">from</span> (<span class="keyword">select</span> schema_name(t.schema_id) <span class="keyword">as</span> [<span class="keyword">Schema</span>], t.name <span class="keyword">as</span> TableName,i.rows <span class="keyword">as</span> [RowCount] </span><br><span class="line"><span class="keyword">from</span> sys.tables <span class="keyword">as</span> t, sysindexes <span class="keyword">as</span> i </span><br><span class="line"><span class="keyword">where</span> t.object_id = i.id <span class="keyword">and</span> i.indid &lt;=<span class="number">1</span>) a</span><br><span class="line"></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> a.[RowCount] <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;统计数据库中所有表的数据规模：&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;
+      
+    
+    </summary>
+    
+      <category term="SqlServer" scheme="http://gavinhome.github.io/categories/SqlServer/"/>
+    
+    
+      <category term="SqlServer" scheme="http://gavinhome.github.io/tags/SqlServer/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SharePoint 2016：自定义表单认证（Forms Based Authentication）</title>
     <link href="http://gavinhome.github.io/2018/09/28/SharePoint%E8%87%AA%E5%AE%9A%E4%B9%89%E8%A1%A8%E5%8D%95%E8%AE%A4%E8%AF%81/"/>
     <id>http://gavinhome.github.io/2018/09/28/SharePoint自定义表单认证/</id>
