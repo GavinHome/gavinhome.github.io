@@ -72,6 +72,32 @@
   </entry>
   
   <entry>
+    <title>统计SqlServer数据库表规模</title>
+    <link href="http://gavinhome.github.io/2019/02/28/%E7%BB%9F%E8%AE%A1SqlServer%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E8%A7%84%E6%A8%A1/"/>
+    <id>http://gavinhome.github.io/2019/02/28/统计SqlServer数据库表规模/</id>
+    <published>2019-02-27T16:00:00.000Z</published>
+    <updated>2019-03-31T12:48:02.454Z</updated>
+    
+    <content type="html"><![CDATA[<p>统计数据库中所有表的数据规模：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>* <span class="keyword">from</span> (<span class="keyword">select</span> schema_name(t.schema_id) <span class="keyword">as</span> [<span class="keyword">Schema</span>], t.name <span class="keyword">as</span> TableName,i.rows <span class="keyword">as</span> [RowCount] </span><br><span class="line"><span class="keyword">from</span> sys.tables <span class="keyword">as</span> t, sysindexes <span class="keyword">as</span> i </span><br><span class="line"><span class="keyword">where</span> t.object_id = i.id <span class="keyword">and</span> i.indid &lt;=<span class="number">1</span>) a</span><br><span class="line"></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> a.[RowCount] <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;统计数据库中所有表的数据规模：&lt;/p&gt;
+&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;
+      
+    
+    </summary>
+    
+      <category term="SqlServer" scheme="http://gavinhome.github.io/categories/SqlServer/"/>
+    
+    
+      <category term="SqlServer" scheme="http://gavinhome.github.io/tags/SqlServer/"/>
+    
+  </entry>
+  
+  <entry>
     <title>matplotlib可视化数据</title>
     <link href="http://gavinhome.github.io/2019/01/25/matplotlib%E5%8F%AF%E8%A7%86%E5%8C%96%E6%95%B0%E6%8D%AE/"/>
     <id>http://gavinhome.github.io/2019/01/25/matplotlib可视化数据/</id>
@@ -123,32 +149,6 @@
       <category term="身份验证" scheme="http://gavinhome.github.io/tags/%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81/"/>
     
       <category term="自定义登录" scheme="http://gavinhome.github.io/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%99%BB%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>统计SqlServer数据库表规模</title>
-    <link href="http://gavinhome.github.io/2018/09/28/%E7%BB%9F%E8%AE%A1SqlServer%E6%95%B0%E6%8D%AE%E5%BA%93%E8%A1%A8%E8%A7%84%E6%A8%A1/"/>
-    <id>http://gavinhome.github.io/2018/09/28/统计SqlServer数据库表规模/</id>
-    <published>2018-09-27T16:00:00.000Z</published>
-    <updated>2019-03-31T12:25:58.393Z</updated>
-    
-    <content type="html"><![CDATA[<p>统计数据库中所有表的数据规模：</p><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span>* <span class="keyword">from</span> (<span class="keyword">select</span> schema_name(t.schema_id) <span class="keyword">as</span> [<span class="keyword">Schema</span>], t.name <span class="keyword">as</span> TableName,i.rows <span class="keyword">as</span> [RowCount] </span><br><span class="line"><span class="keyword">from</span> sys.tables <span class="keyword">as</span> t, sysindexes <span class="keyword">as</span> i </span><br><span class="line"><span class="keyword">where</span> t.object_id = i.id <span class="keyword">and</span> i.indid &lt;=<span class="number">1</span>) a</span><br><span class="line"></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> a.[RowCount] <span class="keyword">DESC</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;统计数据库中所有表的数据规模：&lt;/p&gt;
-&lt;figure class=&quot;highlight sql&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;
-      
-    
-    </summary>
-    
-      <category term="SqlServer" scheme="http://gavinhome.github.io/categories/SqlServer/"/>
-    
-    
-      <category term="SqlServer" scheme="http://gavinhome.github.io/tags/SqlServer/"/>
     
   </entry>
   
@@ -283,6 +283,28 @@
     
     
       <category term="机器学习" scheme="http://gavinhome.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>获取Rtx用户状态方法</title>
+    <link href="http://gavinhome.github.io/2017/02/23/%E8%8E%B7%E5%8F%96Rtx%E7%94%A8%E6%88%B7%E7%8A%B6%E6%80%81%E6%96%B9%E6%B3%95/"/>
+    <id>http://gavinhome.github.io/2017/02/23/获取Rtx用户状态方法/</id>
+    <published>2017-02-23T13:50:00.000Z</published>
+    <updated>2019-03-31T12:48:02.455Z</updated>
+    
+    <content type="html"><![CDATA[<p>背景:企业OA系统需要与Rtx集成，且高权限身份用户需要获取符合某一条下的所有员工rtx状态…</p><a id="more"></a><p><div id="toc"></div><br><!-- csdn --></p><p>方案:以此背景，基于rtx sdk做二次开发，</p><ol><li><p>后台调用RootObj.QueryUserState(String name);方法，api说明</p><pre><code>语法：int QueryUserState(String UserName)功能：查看用户状态参数：UserName用户帐号调用：QueryUserState(“herolin”)说明：返回0 离线、1在线、2离开、-984用户不存在，其他表示调用失败</code></pre></li></ol><p>实际开发测试时候，发现如果大批量的用户不存在，即获取异常，程序执行比较慢，所以我们直接采用第二种方案。</p><ol start="2"><li><p>对于大批量获取，可以在后台通过调用getstatus.php来返回所有用户的状态信息以下是官方api说明：</p><pre><code>getstatus.php 获取用户在线状态仅支持GET@param string username RTX用户名@return int 0不在线 1在线@example http://localhost:8012/getstatus.php?username=XXXX</code></pre></li></ol><p>状态返回值有两个，实际使用过程中，发现还有一个返回值是2，即离开状态；rtx用户名是企业分配的员工账号，将批量员工账号（用分割符号分隔开）传入到php，并改写php代码，获取账号列表，循环得到每个账号的状态等（0，1，2，-1表示不存在）四类。</p><p>同时将网站ip，添加到rtx server安装目录下的sdkproperty.xml文件中（关于sdk的ip限制），并将访问url中的localhost换成rtx server服务器内网ip。为了不破坏服务器文件，将改写的php文件，重新命名放置于webroot目录下。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;背景:企业OA系统需要与Rtx集成，且高权限身份用户需要获取符合某一条下的所有员工rtx状态…&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="技术文章" scheme="http://gavinhome.github.io/categories/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
+    
+    
+      <category term="技术文章" scheme="http://gavinhome.github.io/tags/%E6%8A%80%E6%9C%AF%E6%96%87%E7%AB%A0/"/>
     
   </entry>
   
